@@ -8,22 +8,24 @@
 </head>
 <body>
     <div id="app">
-
+        <!-- 여기가 뷰 인스턴스의 유효 범위 -->
+        <app-header></app-header>
+        <app-content></app-content>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+        Vue.component('app-header', {
+            template: '<h1>Header</h1>'
+        });
 
-      var vm = new Vue({
-        el: '#app',
-        data: {
+        Vue.component('app-content', {
+            template: '<div>Hello Component</div>'
+        });
 
-        },
-        methods:{
-            
-        }
-      });
+       new Vue({
+           el: '#app'
+       }) 
     </script>
-
 </body>
 </html>
